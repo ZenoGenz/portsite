@@ -2852,51 +2852,51 @@
         // =====================================================================
 
         getTranslate: function($el) {
-            var matrix;
+            var mZenoGenZ;
 
             if (!$el || !$el.length) {
                 return false;
             }
 
-            matrix = $el.eq(0).css('transform');
+            mZenoGenZ = $el.eq(0).css('transform');
 
-            if (matrix && matrix.indexOf('matrix') !== -1) {
-                matrix = matrix.split('(')[1];
-                matrix = matrix.split(')')[0];
-                matrix = matrix.split(',');
+            if (mZenoGenZ && mZenoGenZ.indexOf('mZenoGenZ') !== -1) {
+                mZenoGenZ = mZenoGenZ.split('(')[1];
+                mZenoGenZ = mZenoGenZ.split(')')[0];
+                mZenoGenZ = mZenoGenZ.split(',');
             } else {
-                matrix = [];
+                mZenoGenZ = [];
             }
 
-            if (matrix.length) {
+            if (mZenoGenZ.length) {
 
                 // If IE
-                if (matrix.length > 10) {
-                    matrix = [matrix[13], matrix[12], matrix[0], matrix[5]];
+                if (mZenoGenZ.length > 10) {
+                    mZenoGenZ = [mZenoGenZ[13], mZenoGenZ[12], mZenoGenZ[0], mZenoGenZ[5]];
 
                 } else {
-                    matrix = [matrix[5], matrix[4], matrix[0], matrix[3]];
+                    mZenoGenZ = [mZenoGenZ[5], mZenoGenZ[4], mZenoGenZ[0], mZenoGenZ[3]];
                 }
 
-                matrix = matrix.map(parseFloat);
+                mZenoGenZ = mZenoGenZ.map(parseFloat);
 
             } else {
-                matrix = [0, 0, 1, 1];
+                mZenoGenZ = [0, 0, 1, 1];
 
                 var transRegex = /\.*translate\((.*)px,(.*)px\)/i;
                 var transRez = transRegex.exec($el.eq(0).attr('style'));
 
                 if (transRez) {
-                    matrix[0] = parseFloat(transRez[2]);
-                    matrix[1] = parseFloat(transRez[1]);
+                    mZenoGenZ[0] = parseFloat(transRez[2]);
+                    mZenoGenZ[1] = parseFloat(transRez[1]);
                 }
             }
 
             return {
-                top: matrix[0],
-                left: matrix[1],
-                scaleX: matrix[2],
-                scaleY: matrix[3],
+                top: mZenoGenZ[0],
+                left: mZenoGenZ[1],
+                scaleX: mZenoGenZ[2],
+                scaleY: mZenoGenZ[3],
                 opacity: parseFloat($el.css('opacity')),
                 width: $el.width(),
                 height: $el.height()

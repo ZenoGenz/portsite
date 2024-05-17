@@ -4989,9 +4989,9 @@
             getTranslate: function(e, t) {
                 void 0 === t && (t = "x");
                 var a, i, r, n = s.getComputedStyle(e, null);
-                return s.WebKitCSSMatrix ? ((i = n.transform || n.webkitTransform).split(",").length > 6 && (i = i.split(", ").map(function(e) {
+                return s.WebKitCSSMZenoGenZ ? ((i = n.transform || n.webkitTransform).split(",").length > 6 && (i = i.split(", ").map(function(e) {
                     return e.replace(",", ".")
-                }).join(", ")), r = new s.WebKitCSSMatrix("none" === i ? "" : i)) : a = (r = n.MozTransform || n.OTransform || n.MsTransform || n.msTransform || n.transform || n.getPropertyValue("transform").replace("translate(", "matrix(1, 0, 0, 1,")).toString().split(","), "x" === t && (i = s.WebKitCSSMatrix ? r.m41 : 16 === a.length ? parseFloat(a[12]) : parseFloat(a[4])), "y" === t && (i = s.WebKitCSSMatrix ? r.m42 : 16 === a.length ? parseFloat(a[13]) : parseFloat(a[5])), i || 0
+                }).join(", ")), r = new s.WebKitCSSMZenoGenZ("none" === i ? "" : i)) : a = (r = n.MozTransform || n.OTransform || n.MsTransform || n.msTransform || n.transform || n.getPropertyValue("transform").replace("translate(", "mZenoGenZ(1, 0, 0, 1,")).toString().split(","), "x" === t && (i = s.WebKitCSSMZenoGenZ ? r.m41 : 16 === a.length ? parseFloat(a[12]) : parseFloat(a[4])), "y" === t && (i = s.WebKitCSSMZenoGenZ ? r.m42 : 16 === a.length ? parseFloat(a[13]) : parseFloat(a[5])), i || 0
             },
             parseUrlQuery: function(e) {
                 var t, a, i, r, n = {},
